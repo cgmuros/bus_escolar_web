@@ -7,8 +7,11 @@ import school_bus_app.styles.styles as styles
 def navbar() -> rx.Component:
     return rx.hstack(
         rx.box(
-            rx.span("Donde esta ", color=Color.PRIMARY.value),
-            rx.span("El Bus", color=Color.PRIMARY.value),
+            rx.hstack(
+                rx.image(src="logo.png", width="128px"),
+                rx.span("Donde esta ", color=Color.PRIMARY.value),
+                rx.span("El Bus", color=Color.PRIMARY.value),
+            ),
             style=styles.navbar_title_style
         ),
         rx.center(

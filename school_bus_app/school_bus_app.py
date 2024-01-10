@@ -18,7 +18,7 @@ def index() -> rx.Component:
             rx.vstack(
                 rx.text(
                     "Seguridad para sus hijos", 
-                    font_size=Size.LARGE.value, 
+                    font_size=Size.BIG.value, 
                     color=Color.CONTENT.value, 
                     width="100%",
                     font_weight="bold"),
@@ -33,6 +33,7 @@ def index() -> rx.Component:
                     """
                 ),
                 bg=Color.PRIMARY.value,
+                font_size=Size.LARGE.value,
                 padding=Size.VERY_BIG.value,
                 width="100%",
                 # margin=Size.SMALL.value,
@@ -40,10 +41,17 @@ def index() -> rx.Component:
             ),
             rx.vstack(
                 rx.button("COMENZAR", 
-                          variant="ghost",
+                          variant="solid",
                           color=Color.CONTENT.value,
-                          font_size=Size.LARGE.value,
-                          width="50%"),
+                          font_size=Size.VERY_BIG.value,
+                          padding=Size.MEDIUM.value,
+                          width="60%",
+                          style={
+                            'border': '4px solid black',
+                            'background': 'transparent',
+                            'border-radius': '20px'
+                            }
+                        ),
                 rx.hstack(
                     rx.image(src="apple.png"),
                     rx.image(src="android.png"),
