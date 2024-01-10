@@ -1,45 +1,68 @@
-"""Welcome to Reflex! This file outlines the steps to create a basic app."""
-from rxconfig import config
-
 import reflex as rx
+import school_bus_app.styles.styles as styles
+from school_bus_app.styles.styles import Size
+from school_bus_app.styles.colors import Color
+from school_bus_app.components.navbar import navbar
 
-docs_url = "https://reflex.dev/docs/getting-started/introduction"
-filename = f"{config.app_name}/{config.app_name}.py"
 
 
 class State(rx.State):
     """The app state."""
-
     pass
 
 
 def index() -> rx.Component:
-    return rx.fragment(
-        rx.color_mode_button(rx.color_mode_icon(), float="right"),
-        rx.vstack(
-            rx.heading("Welcome to Reflex!", font_size="2em"),
-            rx.box("Get started by editing ", rx.code(filename, font_size="1em")),
-            rx.link(
-                "Check out our docs!",
-                href=docs_url,
-                border="0.1em solid",
-                padding="0.5em",
-                border_radius="0.5em",
-                _hover={
-                    "color": rx.color_mode_cond(
-                        light="rgb(107,99,246)",
-                        dark="rgb(179, 175, 255)",
-                    )
-                },
+    return rx.box(
+        navbar(),
+        rx.hstack(
+            rx.vstack(
+                rx.text(
+                    "Seguridad para sus hijos", 
+                    font_size=Size.LARGE.value, 
+                    color=Color.CONTENT.value, 
+                    width="100%",
+                    font_weight="bold"),
+                rx.text(
+                    """
+                    Las mañanas son un momento agitado. 
+                    Prepararse para ir a trabajar. Preparar a los 
+                    niños para ir a la escuela. ¿Y qué tal si, 
+                    al menos en lo que respecta a que sus hijos 
+                    lleguen al autobús a tiempo, usted pudiera 
+                    deshacerse de parte de ese estrés?
+                    """
+                ),
+                bg=Color.PRIMARY.value,
+                padding=Size.VERY_BIG.value,
+                width="100%",
+                # margin=Size.SMALL.value,
+                
             ),
-            spacing="1.5em",
-            font_size="2em",
-            padding_top="10%",
+            rx.vstack(
+                rx.button("COMENZAR", 
+                          variant="ghost",
+                          color=Color.CONTENT.value,
+                          font_size=Size.LARGE.value,
+                          width="50%"),
+                rx.hstack(
+                    rx.image(src="apple.png"),
+                    rx.image(src="android.png"),
+                ),
+                # bg=Color.SECONDARY.value,
+
+                # padding=Size.SMALL.value,
+                width="100%",
+            ),
+            widht="100%",
         ),
     )
 
 
 # Add state and page to the app.
-app = rx.App()
-app.add_page(index)
+app = rx.App(
+    stylesheets=styles.STYLESCHEETS,
+    style=styles.BASE_STYLE
+)
+app.add_page(index,
+             title="Donde esta el Bus App. Gestion de Buses Escolares")
 app.compile()
