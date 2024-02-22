@@ -1,4 +1,3 @@
-from typing import Any
 import reflex as rx
 import school_bus_app.utils as utils
 from school_bus_app.styles.styles import Size
@@ -13,14 +12,14 @@ from school_bus_app.components.button_menu import button_menu
 
 
 def menu_left() -> rx.Component:
-    return rx.box(
-        rx.vstack(
+    return rx.chakra.box(
+        rx.chakra.vstack(
             button_menu("Ver rutas", "#"),
             button_menu("Mis Pagos", "#"),
             button_menu("Mis Hijos", Route.PARENTS_KIDS.value),
 
-            rx.button(
-                rx.link(
+            rx.chakra.button(
+                rx.chakra.link(
                     "Cerrar Sesion", 
                     color=Color.CONTENT.value, 
                     on_click=ParentsState.logout, 

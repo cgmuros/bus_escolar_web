@@ -17,18 +17,18 @@ from school_bus_app.components.menu_left import menu_left
     on_load=ParentsState.get_username_from_token,
 )
 def parents_main() -> rx.Component:
-    return rx.box(
+    return rx.chakra.box(
         navbar(),
-        rx.container(
-            rx.hstack(
+        rx.chakra.container(
+            rx.chakra.hstack(
                 menu_left(),
-                rx.box(
-                    rx.center(
-                        rx.text(f"Bienvenido {ParentsState.username}"),
+                rx.chakra.box(
+                    rx.chakra.center(
+                        rx.chakra.text(f"Bienvenido {ParentsState.username}"),
                     ),
                     width="75%",
                 ),
             ),
             max_width="100%",
-        ),
+        )
     )

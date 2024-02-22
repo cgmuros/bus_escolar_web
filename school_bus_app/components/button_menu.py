@@ -12,8 +12,8 @@ from school_bus_app.states.parents_state import ParentsState
 
 
 def button_menu(title: str, href: str) -> rx.Component:
-    return rx.button(
-        rx.link(
+    return rx.chakra.button(
+        rx.chakra.link(
             title,
             color=Color.CONTENT.value,
             href=href,

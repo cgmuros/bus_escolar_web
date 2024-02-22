@@ -15,17 +15,17 @@ from school_bus_app.components.navbar import navbar
     meta=utils.meta,
 )
 def index() -> rx.Component:
-    return rx.box(
+    return rx.chakra.box(
         navbar(),
-        rx.hstack(
-            rx.vstack(
-                rx.text(
+        rx.chakra.hstack(
+            rx.chakra.vstack(
+                rx.chakra.text(
                     "Seguridad para sus hijos", 
                     font_size=Size.BIG.value, 
                     color=Color.CONTENT.value, 
                     width="100%",
                     font_weight="bold"),
-                rx.text(
+                rx.chakra.text(
                     """
                     Las mañanas son un momento agitado. 
                     Prepararse para ir a trabajar. Preparar a los 
@@ -42,8 +42,8 @@ def index() -> rx.Component:
                 # margin=Size.SMALL.value,
                 
             ),
-            rx.vstack(
-                rx.button("COMENZAR", 
+            rx.chakra.vstack(
+                rx.chakra.button("COMENZAR", 
                           variant="solid",
                           color=Color.CONTENT.value,
                           font_size=Size.VERY_BIG.value,
@@ -54,9 +54,9 @@ def index() -> rx.Component:
                             'background': 'transparent',
                             }
                         ),
-                rx.hstack(
-                    rx.image(src="apple.png"),
-                    rx.image(src="android.png"),
+                rx.chakra.hstack(
+                    rx.chakra.image(src="apple.png"),
+                    rx.chakra.image(src="android.png"),
                 ),
                 # bg=Color.SECONDARY.value,
 
@@ -64,5 +64,5 @@ def index() -> rx.Component:
                 width="100%",
             ),
             widht="100%",
-        ),
+        )
     )

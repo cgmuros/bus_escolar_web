@@ -21,32 +21,32 @@ class RegisterState(rx.State):
     meta=utils.meta
 )
 def register() -> rx.Component:
-    return rx.box(
+    return rx.chakra.box(
         navbar(),
-        rx.container(
-            rx.form(
-                rx.vstack(
-                    rx.text("Nombre"),
-                    rx.input(placeholder="Nombre", name="first_name"),
-                    rx.text("Apellido"),
-                    rx.input(placeholder="Apellido", name="last_name"),
-                    rx.text("Usuario"),
-                    rx.input(placeholder="Username", name="username"),
-                    rx.text("Correo"),
-                    rx.input(placeholder="Correo", name="email"),
-                    rx.text("Contraseña"),
-                    rx.password(placeholder="Contraseña", name="hashed_password"),
-                    rx.text("Repetir Contraseña"),
-                    rx.password(placeholder="Repetir Contraseña", name="password"),
-                    rx.text("Telefono"),
-                    rx.input(placeholder="Telefono", name="phone_number"),
-                    rx.text("Pais"),
-                    rx.input(placeholder="Pais", name="country"),
-                    rx.text("Region"),
-                    rx.input(placeholder="Region", name="region"),
-                    rx.text("Ciudad"),
-                    rx.input(placeholder="Ciudad", name="city"),
-                    rx.button("Registrarse", variant="solid", color=Color.CONTENT.value),
+        rx.chakra.container(
+            rx.chakra.form(
+                rx.chakra.vstack(
+                    rx.chakra.text("Nombre"),
+                    rx.chakra.input(placeholder="Nombre", name="first_name"),
+                    rx.chakra.text("Apellido"),
+                    rx.chakra.input(placeholder="Apellido", name="last_name"),
+                    rx.chakra.text("Usuario"),
+                    rx.chakra.input(placeholder="Username", name="username"),
+                    rx.chakra.text("Correo"),
+                    rx.chakra.input(placeholder="Correo", name="email"),
+                    rx.chakra.text("Contraseña"),
+                    rx.chakra.password(placeholder="Contraseña", name="hashed_password"),
+                    rx.chakra.text("Repetir Contraseña"),
+                    rx.chakra.password(placeholder="Repetir Contraseña", name="password"),
+                    rx.chakra.text("Telefono"),
+                    rx.chakra.input(placeholder="Telefono", name="phone_number"),
+                    rx.chakra.text("Pais"),
+                    rx.chakra.input(placeholder="Pais", name="country"),
+                    rx.chakra.text("Region"),
+                    rx.chakra.input(placeholder="Region", name="region"),
+                    rx.chakra.text("Ciudad"),
+                    rx.chakra.input(placeholder="Ciudad", name="city"),
+                    rx.chakra.button("Registrarse", variant="solid", color=Color.CONTENT.value),
                     align_items="left"
                 ),
             ),
