@@ -6,8 +6,10 @@ class Color(Enum):
     SECONDARY = "#FFFFFF"
     BACKGROUND = "#FCB041"
     CONTENT = "#000008"
+    WHITE = "#FFFFFF"
 
 class TextColor(Enum):
     HEADER = "#FFFFFF"
+    WHITE = "#FFFFFF"
     # BODY = "#C3C7CB"
     # FOOTER = "#A3ABB2"

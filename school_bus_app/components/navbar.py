@@ -1,14 +1,21 @@
 import reflex as rx
-from school_bus_app.styles.colors import Color
+from school_bus_app.styles.colors import Color, TextColor
 from school_bus_app.styles.styles import Size
 import school_bus_app.styles.styles as styles
+from school_bus_app.states.navbar_state import NavbarState
+from school_bus_app.states.parents_state import ParentsState
+
+
 
 
 def navbar() -> rx.Component:
     return rx.hstack(
         rx.box(
             rx.hstack(
-                rx.image(src="logo.png", width="128px"),
+                rx.link(
+                    rx.image(src="/logo.png", width="128px"),
+                    href="/",  
+                ),
                 rx.span("Donde esta ", color=Color.PRIMARY.value),
                 rx.span("El Bus", color=Color.PRIMARY.value),
             ),
@@ -16,7 +23,18 @@ def navbar() -> rx.Component:
         ),
         rx.center(
             rx.hstack(
-                rx.center(rx.text("Padres", color=Color.SECONDARY.value)),
+                rx.link(
+                    rx.center(
+                        rx.button(
+                        "Padres", 
+                        color=Color.SECONDARY.value, 
+                        variant="unstyled", 
+                        style={':hover': {'color': '#d3d3d3'}}
+                        )
+                    ),
+                    href="/parents",
+                    is_external=False,
+                ),
                 rx.spacer(),
                 rx.center(rx.text("Conductores", color=Color.SECONDARY.value)),
                 rx.spacer(),
