@@ -63,3 +63,5 @@ class ParentsState(rx.State):
     async def logout(self):
         self.id_token_json = ""
         return rx.redirect(Route.PARENTS.value)
+    
+

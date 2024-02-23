@@ -50,10 +50,12 @@ def parents() -> rx.Component:
                                   type_="submit",
                                   width="120px",
                                   ),
-                        rx.chakra.button("Registrarse", 
+                        rx.chakra.button(
+                            rx.link("Registrarse", 
                                   variant="solid", 
                                   color=Color.CONTENT.value,
                                   width="120px",
+                                  href=Route.REGISTER.value,),
                                   ),
                         padding_top=Size.BIG.value,
                     ),

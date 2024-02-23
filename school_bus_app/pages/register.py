@@ -4,21 +4,19 @@ from school_bus_app.routes import Route
 from school_bus_app.components.navbar import navbar
 from school_bus_app.styles.colors import Color
 from school_bus_app.styles.styles import Size
+from school_bus_app.states.register_state import RegisterState
 
 
 
-class RegisterState(rx.State):
-    text: str
 
-    def test(self):
-        self.text = "probandooooo"
 
 @rx.page(
     route=Route.REGISTER.value,
     title=utils.index_title,
     description=utils.index_description,
     image=utils.preview,
-    meta=utils.meta
+    meta=utils.meta,
+    on_load=RegisterState.on_load,
 )
 def register() -> rx.Component:
     return rx.chakra.box(
@@ -41,12 +39,22 @@ def register() -> rx.Component:
                     rx.chakra.text("Telefono"),
                     rx.chakra.input(placeholder="Telefono", name="phone_number"),
                     rx.chakra.text("Pais"),
-                    rx.chakra.input(placeholder="Pais", name="country"),
+                    rx.select(RegisterState.countries_combo, 
+                              placeholder="Pais", 
+                              name="country", 
+                              disabled=False,
+                              on_change=lambda value: RegisterState.get_regions_by_country(value),
+                              ),
                     rx.chakra.text("Region"),
-                    rx.chakra.input(placeholder="Region", name="region"),
+                    rx.select(RegisterState.regions_combo,
+                              placeholder="Region", 
+                              name="region",
+                              ),
                     rx.chakra.text("Ciudad"),
                     rx.chakra.input(placeholder="Ciudad", name="city"),
-                    rx.chakra.button("Registrarse", variant="solid", color=Color.CONTENT.value),
+                    rx.chakra.button("Registrarse", 
+                                     variant="solid", 
+                                     color=Color.CONTENT.value),
                     align_items="left"
                 ),
             ),
