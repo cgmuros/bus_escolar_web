@@ -4,7 +4,8 @@ from school_bus_app.pages.index import index
 from school_bus_app.pages.register import register
 from school_bus_app.pages.parents_login import parents
 from school_bus_app.pages.parents_main import parents_main
-from school_bus_app.pages.parents_kids import parents_kids
+from school_bus_app.pages.parents_students import parents_students
+from school_bus_app.pages.parents_add_student import parents_add_students
 
 
 

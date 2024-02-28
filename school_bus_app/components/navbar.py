@@ -1,9 +1,7 @@
 import reflex as rx
-from school_bus_app.styles.colors import Color, TextColor
-from school_bus_app.styles.styles import Size
 import school_bus_app.styles.styles as styles
-from school_bus_app.states.navbar_state import NavbarState
-from school_bus_app.states.parents_state import ParentsState
+from school_bus_app.styles.colors import Color
+from school_bus_app.styles.styles import Size
 
 
 
@@ -16,8 +14,8 @@ def navbar() -> rx.Component:
                     rx.chakra.image(src="/logo.png", width="128px"),
                     href="/",  
                 ),
-                rx.chakra.span("Donde esta ", color=Color.PRIMARY.value),
-                rx.chakra.span("El Bus", color=Color.PRIMARY.value),
+                rx.chakra.span("School ", color=Color.PRIMARY.value),
+                rx.chakra.span("Bus", color=Color.PRIMARY.value),
             ),
             style=styles.navbar_title_style
         ),

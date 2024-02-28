@@ -1,3 +1,4 @@
 pip==23.3.2
-reflex==0.4.1
+reflex==0.4.2
 wheel==0.42.0
+python-dotenv==1.0.1

@@ -5,7 +5,7 @@ from school_bus_app.styles.colors import Color
 from school_bus_app.components.navbar import navbar
 from school_bus_app.routes import Route
 from school_bus_app.components.navbar import navbar
-from school_bus_app.states.parents_state import ParentsState
+from school_bus_app.states.page_state import PageState
 
 
 
@@ -15,7 +15,7 @@ from school_bus_app.states.parents_state import ParentsState
     description=utils.index_description,
     image=utils.preview,
     meta=utils.meta,
-    on_load=ParentsState.on_load,
+    on_load=PageState.on_load,
 )
 def parents() -> rx.Component:
     return rx.box(
@@ -61,7 +61,7 @@ def parents() -> rx.Component:
                     ),
                     align_items="center",
                 ),  
-                on_submit=ParentsState.login,
+                on_submit=PageState.login,
             ),
             padding=Size.VERY_BIG.value,
         ),

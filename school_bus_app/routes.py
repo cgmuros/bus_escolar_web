@@ -11,3 +11,6 @@ class Route(Enum):
     ABOUT = "/about"
     REGISTER = "/register"
     PARENTS_KIDS = "/parents_kids"
+    PARENTS_ADD_STUDENT = "/parents_kids/add_student"
+
+
